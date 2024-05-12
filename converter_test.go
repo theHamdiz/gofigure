@@ -5,10 +5,10 @@ import "testing"
 
 func TestFormatFigure(t *testing.T) {
 	cases := []struct {
-		number   int64
+		number   float64
 		expected string
 	}{
-		{123, "123"},
+		{123, "123.0"},
 		{1234, "1.2K"},
 		{1234567, "1.2M"},
 		{1234567890, "1.2B"},
@@ -18,9 +18,9 @@ func TestFormatFigure(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		got := FormatFigure(c.number)
+		got, _ := FormatFigure(c.number)
 		if got != c.expected {
-			t.Errorf("FormatFigure(%d) = %s; want %s", c.number, got, c.expected)
+			t.Errorf("FormatFigure(%.1f) = %s; want %s", c.number, got, c.expected)
 		}
 	}
 }
