@@ -29,9 +29,16 @@ func main() {
     fmt.Println(gofigure.FormatFigure(1234)) // Output: "1.2K"
     fmt.Println(gofigure.FormatFigure(1234567)) // Output: "1.2M"
     fmt.Println(gofigure.FormatFigure(1234567890)) // Output: "1.2B"
-    fmt.Println(gofigure.FormatFigure(1234567890123)) // Output: "1.2T"
-    fmt.Println(gofigure.FormatFigure(1234567890123456)) // Output: "1.2Q"
+    fmt.Println(gofigure.FormatFigure(1234567890123.4)) // Output: "1.2T"
+    fmt.Println(gofigure.FormatFigure("1234567890123456")) // Output: "1.2Q"
     fmt.Println(gofigure.FormatFigure(1234567890123456789)) // Output: "1.2Qi"
 }
 
 ```
+
+## Change Log:
+> `v0.1.1`
+> - `FormatFigure()` now accepts `interface{}`.
+> - Any number (`int`, `uint`, `float`) are accepted.
+> - Any `string` representative of a number is also accepted.
+> - `FormatFigure()` now returns `(string, error)` instead of just `string`.
