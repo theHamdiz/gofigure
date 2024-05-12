@@ -42,3 +42,8 @@ func main() {
 > - Any number (`int`, `uint`, `float`) are accepted.
 > - Any `string` representative of a number is also accepted.
 > - `FormatFigure()` now returns `(string, error)` instead of just `string`.
+
+
+> `v0.1.3`
+> - Fixed a formatting bug.
+> - Added some gigantic numbers.
